@@ -1,0 +1,18 @@
+:root{
+  --darklBlue:#fff;
+  --titulo:#642a73;
+  --fondo1:#bc4e9c;
+  --fondo2:#1F1F3C;
+  /*TEMAS HEADER*/
+
+  /*TEMA 1
+  --color_alto:hsla(340, 95%, 50%, 0.459);
+  --color_medio:hsla(317, 45%, 52%, 0.664);
+  --color_bajo:#bc4e9c;
+*/
+  /*TEMA 2*/
+  --color_alto:hsla(270, 84%, 27%, 0.9);
+  --color_medio:hsla(245, 51%, 65%, 0.4);
+  --color_bajo:#efb3ff;
+}
+
