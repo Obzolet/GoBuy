@@ -1,21 +1,26 @@
-import { User } from '../../../model/user';
-import UserService from '../../hook/user_service';
+
+import UseCreateUser from '../../hook/use_create_user';
+import useUserData from '../../hook/use_data_user';
+import useMessage from '../../hook/use_message';
+import UseValidateForm from '../../hook/use_validate_form';
+import Message from '../pure/message';
+
+
+
 
 const RegistrationAuth = () => {
+
+  const { createUser } = UseCreateUser();
+  const { validateFields } = UseValidateForm();
   const {
-    setShowSuccess,
-    successMessage,
-    showSuccess,
-    setShowError,
     errorMessage,
     showError,
-    createUser,
-  } = UserService();
-
-  const mssgStyle = showError ? 'error-message' : showSuccess ? 'success-message' : '';
-  const showMssg = showError ? errorMessage : successMessage;
-  const optionShowMssg = showError ? showError : showSuccess;
-  const clearMssg = showError ? () => setShowError(false) : () => setShowSuccess(false);
+    successMessage,
+    showSuccess,
+    showErrorMessage,
+    showSuccessMessage,
+    hideMessage,
+  } = useMessage();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -23,56 +28,64 @@ const RegistrationAuth = () => {
     const email = e.target.elements.email.value;
     const password = e.target.elements.password.value;
     const confirmPassword = e.target.elements.confirmPassword.value;
-    const user = new User(name, email, password);
-    createUser(user, confirmPassword);
-    e.target.reset();
+
+    const user = { name, email, password, confirmPassword };
+
+    if (!validateFields( user )) {
+      if (password !== confirmPassword) {
+        showErrorMessage("Las contraseñas no coinciden.");
+
+      } else {
+        showErrorMessage("Por favor, complete todos los campos.");
+
+      }
+      showSuccessMessage('');
+      return;
+    }
+
+  createUser(user);
+  e.target.reset();
+  showSuccessMessage("Te has registrado", 2000);
   };
+  const mssgStyle = showError ? "error-message" : showSuccess ? "success-message" : "";
+  const showMssg = showError ? errorMessage : successMessage;
+  const optionShowMssg = showError ? showError : showSuccess;
+  const clearMssg = showError ? hideMessage : hideMessage;
 
   return (
-  <>
-    <header style={{ backgroundColor: '#A01BC4', margin: 0, padding: '20px', color: '#FFF' }}>Metasoft</header>
-    <main className="contenedor">
-      <form className="formulario" onSubmit={handleSubmit}>
-        <h1>Registrate</h1>
-        <span className={ 'message ' + mssgStyle }>
-            <p>{showMssg}</p>
-            {optionShowMssg && (
-              <button onClick={ clearMssg }>Aceptar</button>
-            )}
-          </span>
+    <>
+      <header style={{ backgroundColor: "#A01BC4", margin: 0, padding: "20px", color: "#FFF" }}>Metasoft</header>
+      <main className="contenedor">
+        <form className="formulario" onSubmit={handleSubmit}>
+          <h1>Registrate</h1>
+         <Message mssgStyle={mssgStyle} showMssg={showMssg} optionShowMssg={optionShowMssg} clearMssg={clearMssg}></Message>
           <section className="input-contenedor">
-            <input  className="input-text" type="text"  placeholder="Nombre Completo"  name="name"/>
+            <input className="input-text" type="text" placeholder="Nombre Completo" name="name" />
           </section>
 
           <section className="input-contenedor">
-            <input className="input-text" type="email" placeholder="Correo Electrónico" name="email"/>
+            <input className="input-text" type="email" placeholder="Correo Electrónico" name="email" />
           </section>
 
           <section className="input-contenedor">
-            <input className="input-text" type="password" placeholder="Contraseña" name="password"/>
+            <input className="input-text" type="password" placeholder="Contraseña" name="password" />
           </section>
 
           <section className="input-contenedor">
-            <input className="input-text" type="password" placeholder="Confirmar Contraseña" name="confirmPassword"/>
+            <input className="input-text" type="password" placeholder="Confirmar Contraseña" name="confirmPassword" />
           </section>
 
-          <button className="button" type='submit'>Registrate</button>
+          <button className="button" type="submit">
+            Registrate
+          </button>
 
-          <p>
-            Al registrarte, aceptas nuestras Condiciones de uso y Política de privacidad.
-          </p>
+          <p>Al registrarte, aceptas nuestras Condiciones de uso y Política de privacidad.</p>
           <p>
             ¿Ya tienes una cuenta? <br /> <a className="link" href="login.html"> Iniciar Sesión</a>
           </p>
-      </form>
-    </main>
-      
-  </>
-    
-
-    
-
-
+        </form>
+      </main>
+    </>
   );
 };
 
