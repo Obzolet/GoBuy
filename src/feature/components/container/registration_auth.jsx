@@ -45,11 +45,11 @@ const RegistrationAuth = () => {
     }else{
       await createUser(user);
       e.target.reset();
-      showSuccessMessage("Te has registrado", 2000);
+      showSuccessMessage("Te has registrado exitosamente", 2000);
       // Esperar 2 segundos antes de redirigir al usuario a la página de inicio de sesión
        await new Promise((resolve) => setTimeout(resolve, 2000));
 
-      //nos redirije al login
+      //nos redirige al login
       route('/');
       };
     }
