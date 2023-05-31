@@ -7,21 +7,28 @@ const UseAuthUser = () => {
   const { urlApi } = useUserData();
 ;
   const [authenticatedUser, setAuthenticatedUser] = useState(null);
+  const [authenticatedEmail, setAuthenticatedEmail] = useState(null);
 
   useEffect(() => {
     // Aquí puedes realizar cualquier lógica adicional cuando el usuario autenticado cambie
     console.log("Usuario autenticado:", authenticatedUser);
   }, [authenticatedUser]);
 
-  const authenticateUser = async (email, password, onSuccess, onFailure) => {
+  const authenticateUser = async (email, password, onSuccess, onFailure,authEmail) => {
     try {
       const response = await fetch(urlApi);
       const usersData = await response.json();
       const authenticatedUser = usersData.find(
         (user) => user.email === email && user.password === password
       );
-
-      if (authenticatedUser) {
+      const authenticatedEmail = usersData.find(
+        (user) => user.email===email
+      );
+     
+      if(!authenticatedEmail){
+        setAuthenticatedEmail(authenticatedEmail);
+        authEmail();
+      }else  if (authenticatedUser) {
         setAuthenticatedUser(authenticatedUser);
         onSuccess();
       } else {

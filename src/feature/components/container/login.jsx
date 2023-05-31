@@ -3,6 +3,7 @@ import UseAuthUser from "../../hook/use_auth_user";
 import UseValidateForm from "../../hook/use_validate_form";
 import useMessage from "../../hook/use_message";
 import Message from "../pure/message";
+import { Link } from "react-router-dom";
 
 
 
@@ -48,8 +49,11 @@ function Login() {
     const onFailure = () => {
       showErrorMessage("Credenciales incorrectas");
     };
+    const authEmail = () =>{
+      showErrorMessage("El usuario no existe");
+    }
 
-    authenticateUser(email, password,onSuccess,onFailure);
+    authenticateUser(email, password,onSuccess,onFailure,authEmail);
 
     
 
@@ -80,7 +84,10 @@ function Login() {
           </section>
           <button className="button" type="submit">Login</button>
           <p>Al registrarte, aceptas nuestras Condiciones de uso y Política de privacidad.</p>
-          <p>¿No tienes una cuenta? <br /> <a className="link" href="registro.html">Registrate</a></p>
+          <p>
+            ¿No tienes una cuenta? <br />
+            <Link to="/registro" className="link">Registrate</Link>
+          </p>
         </form>
       </fieldset>
     </>
