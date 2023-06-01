@@ -1,0 +1,4 @@
+function Inicio() {
+
+    return(null);
+}
