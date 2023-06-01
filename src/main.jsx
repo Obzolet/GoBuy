@@ -4,7 +4,9 @@ import App from './App.jsx'
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
+  <CarritoProvider>
   <React.StrictMode>
     <App />
   </React.StrictMode>,
+  </CarritoProvider>
 )

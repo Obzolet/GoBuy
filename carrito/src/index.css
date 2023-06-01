@@ -1,0 +1,248 @@
+*{
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-sizing: border-box;
+}
+body{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 100vh;
+  font-family: sans-serif;
+  background-color: snow;
+}
+a{
+  text-decoration: none;
+}
+li{
+  list-style-type: none;
+}
+html{
+  scroll-behavior: smooth;
+}
+
+/*.carrito-contanier{
+        
+            position: top;
+            width: 10rem;
+            height: 10rem;
+      }
+         
+
+      .carrito {
+        width: 0rem;
+        height: 0rem;
+        background: blue;
+        position: absolute;
+        transform: translate(-50%, -50%); 
+      }
+      .carrito:hover {
+        filter: none;
+      }
+
+        */
+
+        body{
+            background-color: #F2F1F3;
+            font-family: 'Roboto', sans-serif;
+            height: 100vh;
+            padding-top: center;
+            padding-left: center;
+            overflow: hidden;
+        }
+
+
+        
+  section{
+
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        
+
+  }      
+
+.carrito-container {
+    
+    position: fixed;
+    top: 4rem;
+    right: 4rem;
+    width: 6.6rem;
+    height: 6.6rem;
+    z-index: -1;
+    
+
+}
+
+
+.carrito-button {
+    width: 0rem;
+    height: 0rem;
+    background-color: hsla(245, 51%, 65%, 0.4); 
+    border-radius: 10%;
+    transition: 0.2s; 
+    /*poition: absolute;*/
+    top: 50%; 
+    left: 50%;
+    z-index: -1;
+    
+}
+button:focus{
+    outline: 0;
+}    
+
+/*
+          .button-carrito{
+
+        
+            cursor: pointer;
+            position: relative;
+            top: 50%; 
+            left: 50%;
+        
+            z-index: -1; /*Ocupa el eje Z por lo que se muestra debajo de otros elementos*/
+
+
+/*.carrito-container:hover .carrito-image {
+            filter: hue-rotate(180deg); /* Cambia el color de la imagen 
+          }
+          */
+&::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 4px;
+    opacity: 0;
+    transition: all 6000ms ease;
+
+    
+}
+
+.icon {
+    width: 64px;
+    margin-right: 64px;
+    top: 50%;
+    left: 50%;
+    filter: brightness(0) saturate(100%) invert(64%) sepia(7%) saturate(336%) hue-rotate(289deg) brightness(97%) contrast(85%);
+    cursor: pointer;
+    z-index: -1;
+}
+
+
+&:hover {
+    
+    color: hsla(270, 84%, 27%, 0.9);
+    /*#2e0854*/
+
+    &::before {
+        opacity: 1;
+    }
+
+    .icon-dashboard{
+        filter: brightness(0) saturate(100%) invert(5%) sepia(57%) saturate(7479%) hue-rotate(271deg) brightness(96%) contrast(102%);
+
+
+    }
+}
+.show {
+    z-index: 10; /*Animacion de cuando clickeo en el boton*/
+}
+
+
+ 
+@keyframes popup {
+    0% {
+        width: 0;
+        height: 0;
+    }
+    50% {
+        width: 8rem;  /*En esta parte creamos la animacion de pequeño a grande*/
+        height: 8rem;
+    }
+    100% {
+        width: 6.6rem;
+        height: 6.6rem;
+    }
+}
+
+
+@media screen and (max-width:900px){ /*Parte responsive*/
+
+    .carrito-container {
+        bottom: 3rem;
+        right: 3rem;
+    }
+    .show .carrito-button {
+        width: 4.5rem;
+        height: 4.5rem;
+    }
+    .show img {
+        transform: translate(-50%, -50%) scale(0.05);
+    }/*Las imagenes se reducen a la mitad para ajustarse*/
+
+    @keyframes popup {
+        0% {
+            width: 0;
+            height: 0;
+        }/*Se adaptaa tambien la animacion del boton, esta vez con valores minimos*/
+        50% {
+            width: 5rem;
+            height: 5rem;
+        }
+        100% {
+            width: 4.5rem;
+            height: 4.5rem;
+        }
+    }
+
+}
+@media screen and (max-width:500px){
+
+    .carrito-container   {  /*Para el ultimo reduce el conenedor*/
+        bottom: 1.5rem;
+        right: 1.5rem;
+    }
+
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
+  }
+  
+  .box {
+    width: 200px;
+    height: 300px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+    background-color: white;
+    
+  }
+  
+  .box img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+
+  }
+  
+  .box h3 {
+    margin-top: 10px;
+  }
+  
+  .box p {
+    margin-top: 5px;
+  }
