@@ -4,6 +4,7 @@ import UseValidateForm from "../../hook/use_validate_form";
 import useMessage from "../../hook/use_message";
 import Message from "../pure/message";
 import { Link } from "react-router-dom";
+import Header from "../pure/header";
 
 
 
@@ -67,7 +68,7 @@ function Login() {
 
   return (
     <>
-      <header style={{ backgroundColor: '#A01BC4', margin: 0, padding: '20px', color: '#FFF' }}>Metasoft</header>
+     <Header></Header>
       <fieldset className="contenedor">
         <form className="formulario" onSubmit={handleLogin}>
           <h1>Login</h1>

@@ -5,6 +5,7 @@ import UseCreateUser from '../../hook/use_create_user';
 import useMessage from '../../hook/use_message';
 import UseValidateForm from '../../hook/use_validate_form';
 import Message from '../pure/message';
+import Header from '../pure/header';
 
 
 
@@ -47,7 +48,7 @@ const RegistrationAuth = () => {
       e.target.reset();
       showSuccessMessage("Te has registrado exitosamente", 2000);
       // Esperar 2 segundos antes de redirigir al usuario a la página de inicio de sesión
-       await new Promise((resolve) => setTimeout(resolve, 2000));
+      await new Promise((resolve) => setTimeout(resolve, 2000));
 
       //nos redirige al login
       route('/');
@@ -61,7 +62,7 @@ const RegistrationAuth = () => {
 
   return (
     <>
-      <header style={{ backgroundColor: "#A01BC4", margin: 0, padding: "20px", color: "#FFF" }}>Metasoft</header>
+      <Header></Header>
       <main className="contenedor">
         <form className="formulario" onSubmit={handleSubmit}>
           <h1>Registrate</h1>

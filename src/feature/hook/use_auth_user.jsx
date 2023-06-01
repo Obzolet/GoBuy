@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import  { useState, useEffect } from 'react';
 import useUserData from './use_data_user';
 
 
@@ -16,6 +16,7 @@ const UseAuthUser = () => {
 
   const authenticateUser = async (email, password, onSuccess, onFailure,authEmail) => {
     try {
+      // trae el api para usarlo en el hook create
       const response = await fetch(urlApi);
       const usersData = await response.json();
       const authenticatedUser = usersData.find(
@@ -44,3 +45,7 @@ const UseAuthUser = () => {
 }
 
 export default UseAuthUser;
+
+import React from 'react';
+
+
