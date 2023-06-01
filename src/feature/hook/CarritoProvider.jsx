@@ -1,7 +1,7 @@
 //Cargo los datos del contexto con un proveedor
 
 import React, { createContext } from 'react';
-import CarritoContext from "../context/CarritoContext";
+import CarritoContext from "../components/pure/CarritoContext";
 
 const CarritoProvider = ({ children }) => {
 
