@@ -2,7 +2,11 @@ import React, { useContext } from "react";
 import UserContext from "../../context/user/user_context";
 import AuthContext from "../../context/auth/auth_context";
 
+let menu_nav_ini = true;
+let inicio = true;
+
 function Main_menu_nav() {
+    
 const { logout } = useContext(AuthContext);
   const { name } = useContext(UserContext);
   const handleLogout = () => {
@@ -72,6 +76,7 @@ function Main_inicio() {
             </a>
           </li>
 
+        {/* 
           <li className="imagen-port">
             <a href="./view/verificar_doc.html">
               <picture>
@@ -85,6 +90,7 @@ function Main_inicio() {
               </article>
             </a>
           </li>
+        */}
 
           <li className="imagen-port">
             <a href="./view/cupones.html">
@@ -100,6 +106,7 @@ function Main_inicio() {
             </a>
           </li>
 
+        {/*  
           <li className="imagen-port">
             <a href="./view/verificar_comp.html">
               <picture>
@@ -113,7 +120,9 @@ function Main_inicio() {
               </article>
             </a>
           </li>
+        */}
 
+{/*  
           <li className="imagen-port">
             <a href="./view/verificar_produc.html">
               <picture>
@@ -127,7 +136,9 @@ function Main_inicio() {
               </picture>
             </a>
           </li>
+*/}
 
+{/*  
           <li className="imagen-port">
             <a href="./view/atencion.html">
               <picture>
@@ -141,6 +152,8 @@ function Main_inicio() {
               </article>
             </a>
           </li>
+*/}
+
 
           <li className="imagen-port">
             <a href="./view/producto.html">
