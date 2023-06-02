@@ -7,9 +7,6 @@ import { Link, useNavigate } from "react-router-dom";
 import Header from "../pure/header";
 import AuthContext from "../../context/auth/auth_context";
 
-
-
-
 function Login() {
   const { login } = useContext(AuthContext);
   const [email, setEmail] = useState("");
