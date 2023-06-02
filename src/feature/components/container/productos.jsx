@@ -1,9 +1,13 @@
 import React from "react";
 import Informacion_producto from "../pure/productos_informacion";
-import Informacion from "../pure/inicio_informacion";
 import Menu from "../pure/menu_inicio";
+import { useNavigate } from 'react-router-dom';
 
-const Inicio = () => {
+const Productos = () => {
+    const route = useNavigate();
+  const handleGoCart = () => {
+    route('/inicio');
+  };
   return (
     <>
       {/*  */}
@@ -15,7 +19,9 @@ const Inicio = () => {
         <section
           id="textos-header"
           style={{ cursor: "pointer" }}
+          onClick={handleGoCart} 
         >
+
           <h1>GoBuy</h1>
           <h2>Página web de cambio y venta de objetos</h2>
         </section>
@@ -33,11 +39,9 @@ const Inicio = () => {
       </header>
 
       <main>
-        {/* esto contiene todo el main de inicio */}
-        <Informacion/>
-        {/* 
+        {/* esto contiene todo el main de inicio 
+        <Informacion/>*/}
         <Informacion_producto/>
-         */}
       </main>
 
       {/* Pie de pagina */}
@@ -71,4 +75,4 @@ const Inicio = () => {
   );
 };
 
-export default Inicio;
+export default Productos;

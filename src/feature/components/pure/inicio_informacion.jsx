@@ -1,6 +1,14 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+
 
 const Informacion = () => {
+
+  const route = useNavigate();
+  const handleGoCart = () => {
+    route('/productos');
+  };
+
     return (
         <>
         {/* SOBRE NOSOTROS */}
@@ -66,7 +74,7 @@ const Informacion = () => {
             </li>
 
             <li className="imagen-port" >
-              <a  >
+              <a onClick={handleGoCart} >
                 <picture>
                   <img src="img/img7.png" alt="" />
                 </picture>
