@@ -1,0 +1,110 @@
+ul#carrito{
+  
+    margin: auto;
+    width: 18%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    background-color: hsla(245, 51%, 65%, 0.4);
+
+}
+
+ul#carrito > li {
+    
+    margin: auto;
+    display: block;
+    width: 80%;
+    text-align: center;
+    box-sizing: border-box;
+    border: 2px solid #000;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    position: relative;
+    cursor: pointer;
+}
+
+ul#carrito > li > h2 {
+    font-size: 1.1em;
+    height: 2em;
+    font-weight: 700;
+    padding-top: 0.5em;
+    display: block;
+    width: 90%;
+    color: #000;
+    border-bottom: 1px solid #000;
+    margin: 0 auto;
+    margin-bottom: 0.6em;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+}
+
+ul#carrito > h3 {
+    text-align: center;
+    font-size: 1.1em;
+    height: 2em;
+    font-weight: 700;
+    padding-top: 0.5em;
+    display: block;
+    width: 90%;
+    color: #000;
+    border-bottom: 1px solid #000;
+    margin: 0 auto;
+    margin-bottom: 0.6em;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+}
+
+ul#carrito > li span.precio {
+    width: 50%;
+    float: right;
+    text-align: center;
+    font-weight: 600;
+    color: #000;
+}
+
+ul#carrito > li span.cantidad {
+    font-weight: 400;
+    color: #000;
+
+}
+
+ul#carrito > li img.img-producto {
+    width: 20%;
+    height: 20%;
+}
+
+ul#carrito > li button.agregar-carrito {
+    width: 40%;
+    margin: auto;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    display: block;
+ 
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    border-color: #4d0686 ;
+}
+
+ul#carrito > li button.agregar-carrito:hover {
+    background-color: #4d0686; /* Green */
+    color: white;
+}
+
+ul#carrito >button.agregar-carrito {
+    height: 30px;
+    width: 40%;
+    margin: auto;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    display: block;
+ 
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    border-color: #4d0686 ;
+}
+
+ul#carrito >button.agregar-carrito:hover {
+    background-color: #4d0686; /* Green */
+    color: white;
+}
