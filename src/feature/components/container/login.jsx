@@ -51,7 +51,7 @@ function Login() {
       
       login();
       await new Promise((resolve) => setTimeout(resolve, 2000));
-      route('/next')
+      route('/inicio')
     };
 
     const onFailure = () => {

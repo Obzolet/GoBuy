@@ -4,6 +4,7 @@ import Login from '../feature/components/container/login';
 import RegistrationAuth from '../feature/components/container/registration_auth';
 
 import Next from '../feature/components/container/next';
+import Inicio from '../feature/components/container/inicio';
 import AuthContext from '../feature/context/auth/auth_context';
 import { Status } from '../common/status.enum';
 import { useContext } from 'react';
@@ -18,10 +19,11 @@ import { useContext } from 'react';
               <Route path="/registro" element={<RegistrationAuth />} />
   
               { authenticated === Status.LOGGED_IN ? (
-                <Route path="/next" element={<Next></Next>} />
+                //<Route path="next/" element={<Next></Next>} />
+                <Route path="/inicio" element={<Inicio/>} />
               ) : (
                 // Redirigir a la página de inicio de sesión si no está autenticado
-                <Route path="/next" element={<Navigate to="/" replace />} />
+                <Route path="/inicio" element={<Navigate to="/" replace />} />
               )}
               
             </Routes>
