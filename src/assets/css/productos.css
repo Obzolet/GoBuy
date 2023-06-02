@@ -1,6 +1,6 @@
 
-p#contenedor_producto{
-   width: 100%; 
+article#contenedor_producto{
+   width: 100%;  
    display: flex;
    flex-wrap: wrap;
 }
