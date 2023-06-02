@@ -1,21 +1,22 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import UseAuthUser from "../../hook/use_auth_user";
 import UseValidateForm from "../../hook/use_validate_form";
 import useMessage from "../../hook/use_message";
 import Message from "../pure/message";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Header from "../pure/header";
+import AuthContext from "../../context/auth/auth_context";
 
 
 
 
 function Login() {
-    
+  const { login } = useContext(AuthContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { authenticateUser } = UseAuthUser();
   const { validateFields } = UseValidateForm();
-  
+  const route = useNavigate();
   const {
     errorMessage,
     showError,
@@ -36,6 +37,7 @@ function Login() {
   };
 
   const handleLogin = (e) => {
+
     const user = { email,password }
     e.preventDefault();
     if(!validateFields( user )){
@@ -43,8 +45,13 @@ function Login() {
       showSuccessMessage('');
       return;
     }
-    const onSuccess = () => {
+    const onSuccess = async () => {
+     
       showSuccessMessage("Credenciales correctas");
+      
+      login();
+      await new Promise((resolve) => setTimeout(resolve, 2000));
+      route('/next')
     };
 
     const onFailure = () => {
