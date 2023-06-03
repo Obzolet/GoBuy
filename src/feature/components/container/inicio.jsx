@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import Informacion_producto from "../pure/productos_informacion";
 import Informacion from "../pure/inicio_informacion";
 import Menu from "../pure/menu_inicio";
+import UserContext from "../../context/user/user_context";
 
 const Inicio = () => {
+  const {name} = useContext(UserContext);
   return (
     <>
+    
       {/*  */}
       {/* <button classNameName="button" onClick={handleLogout}>cerrar sesion</button> */}
 
@@ -55,6 +58,10 @@ const Inicio = () => {
             <h4>Location</h4>
             <p>Calle falsa #123</p>
           </li>
+          <li className="content-foo">
+          <h4>Sesion iniciada por:</h4>
+          <p>{name}</p>
+        </li>
         </ul>
         <h2 className="titulo-final">
           &copy; Metasoft | Sofware de intercambios y ventas

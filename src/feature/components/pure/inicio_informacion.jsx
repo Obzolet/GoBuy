@@ -5,6 +5,9 @@ import { useNavigate } from 'react-router-dom';
 const Informacion = () => {
 
   const route = useNavigate();
+  const GoCart = () => {
+    route('/carrito');
+  };
   const handleGoCart = () => {
     route('/productos');
   };
@@ -88,7 +91,7 @@ const Informacion = () => {
             </li>
 
             <li className="imagen-port">
-              <a href="./view/carrito.html">
+              <a onClick={GoCart}>
                 <picture>
                   <img src="img/img8.png" alt="" />
                 </picture>

@@ -8,6 +8,7 @@ import Inicio from '../feature/components/container/inicio';
 import AuthContext from '../feature/context/auth/auth_context';
 import { Status } from '../common/status.enum';
 import { useContext } from 'react';
+import Cart from '../feature/components/pure/carrito';
 
   const RouteGobuy = () => {
     const { authenticated } = useContext(AuthContext);
@@ -23,6 +24,7 @@ import { useContext } from 'react';
                 //<Route path="next/" element={<Next></Next>} />
                 <Route path="/inicio" element={<Inicio/>} />
                 <Route path="/productos" element={<Productos />} />
+                <Route path='/carrito' element = {<Cart></Cart>}></Route>
                 </>
               ) : (
                 // Redirigir a la página de inicio de sesión si no está autenticado
