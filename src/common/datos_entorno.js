@@ -43,7 +43,7 @@ export const producto =[
     ,
     {
         id:5,
-        nombre: "sapatos",
+        nombre: "zapatos",
         precio: 180000,
         descripcion: "adipisicing elit. Deserunt veniam eius aspernatur ad consequuntur aperiam minima sed dicta odit numquam sapiente quam eum, architecto",
         imagen: "img/img5.png",
